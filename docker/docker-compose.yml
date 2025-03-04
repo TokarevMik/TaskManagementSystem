@@ -1,0 +1,21 @@
+---
+version: "3.9"
+
+services:
+  mysql_db:
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_DATABASE=TASK_DB
+      - MYSQL_USER=ROOT
+      - MYSQL_PASSWORD=ROOT
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  redis:
+    image: redis:7.4
+    ports:
+      - "6379:6379"
+
+...

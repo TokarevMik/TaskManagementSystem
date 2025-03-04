@@ -1,0 +1,25 @@
+---
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  jpa:
+    hibernate:
+      generate-ddl: true
+    open-in-view: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/task_db?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: cuafbu5k3a#
+    hikari:
+      schema: task_schema
+      connection-init-sql: CREATE SCHEMA IF NO EXISTS task_schema
+      connection-timeout: 10000
+app:
+  jwt:
+    secret: 4eeab38d706831be4b36612ead768ef8182d1dd6
+    tokenExpiration: 3m
+    refreshTokenExpiration: 30m
+
+...
